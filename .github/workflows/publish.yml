@@ -1,0 +1,53 @@
+name: Changesets
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  CI: true
+  PNPM_CACHE_FOLDER: .pnpm-store
+
+jobs:
+  version:
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    steps:
+      - name: 迁出分支
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: 准备 Node 16 环境
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: 安装 pnpm
+        run: npm i pnpm@latest -g
+
+      - name: 配置 pnpm 缓存
+        run: pnpm config set store-dir $PNPM_CACHE_FOLDER
+
+      - name: 配置 NPM_TOKEN
+        run: npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: 配置 git-checks
+        run: npm config set git-checks false
+
+      - name: 安装依赖
+        run: pnpm install
+
+      - name: 打包依赖
+        run: pnpm build
+
+      - name: 版本更新/发布
+        uses: changesets/action@v1
+        with:
+          publish: pnpm publish -r --access public
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

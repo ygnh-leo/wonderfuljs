@@ -1,0 +1,28 @@
+{
+  "name": "mono",
+  "version": "0.0.0",
+  "description": "javascript library for llyz, Include cli utils libs tools.",
+  "author": "llyz <ygnh136@qq.com> (https://li-yuanzhi.com)",
+  "license": "MPL-2.0",
+  "private": true,
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "node ./scripts/prepare.js",
+    "format": "prettier --write \"**/*.{js,ts,tsx,css,scss,less,json,md}\"",
+    "pre-commit": "pnpm turbo pre-commit",
+    "build": "pnpm turbo build"
+  },
+  "dependencies": {
+    "turbo": "~1.6.3",
+    "prettier": "^2.8.0",
+    "@changesets/cli": "^2.25.2"
+  },
+  "devDependencies": {
+    "husky": "~8.0.2"
+  },
+  "engines": {
+    "node": "^16.0.0",
+    "npm": ">=8.0.0",
+    "pnpm": ">=7.0.0"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "pipeline": {
+    "dev": {
+      "cache": false
+    },
+    "build": {
+      "dependsOn": ["^build"]
+    },
+    "start": {
+      "dependsOn": ["build"]
+    },
+    "format": {},
+    "lint": {
+      "dependsOn": ["format"]
+    },
+    "test": {
+      "dependsOn": ["lint", "build", "^test"]
+    },
+    "pre-commit": {}
+  }
+}

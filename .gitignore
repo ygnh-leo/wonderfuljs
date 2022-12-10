@@ -1,0 +1,13 @@
+# IDE
+.idea/
+
+# NPM
+node_modules/
+.pnpm-store/
+
+# Cache
+.turbo/
+
+# Mac
+.DS_Store
+Icon?
