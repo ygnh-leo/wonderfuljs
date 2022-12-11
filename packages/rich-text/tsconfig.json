@@ -1,0 +1,21 @@
+{
+  "extends": "@wonderfuljs/tsconfig/react.json",
+  "compilerOptions": {
+    "sourceMap": true,
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "skipLibCheck": false,
+    "declaration": true,
+    "declarationDir": "dist",
+    "typeRoots": ["node_modules/@types", "types"],
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"],
+      "~dev/*": ["dev/*"]
+    }
+  },
+  "include": ["dev/**/*", "src/**/*", "types/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

@@ -1,0 +1,23 @@
+body {
+	display: flex;
+	width: 100%;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+	/* 蓝色到绿色的背景渐变 */
+	background: linear-gradient(-270deg, #00d2ff, #3a7bd5);
+}
+
+#root {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	flex: 1;
+	padding: 32px;
+}
+
+* {
+	box-sizing: border-box;
+}
