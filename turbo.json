@@ -1,20 +1,26 @@
 {
+  "$schema": "https://turbo.build/schema.json",
   "pipeline": {
     "dev": {
       "cache": false
     },
     "build": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build"],
+      "outputs": ["dist","build"]
     },
     "start": {
       "dependsOn": ["build"]
     },
-    "format": {},
+    "format": {
+      "outputs": []
+    },
     "lint": {
-      "dependsOn": ["format"]
+      "dependsOn": ["format"],
+      "outputs": []
     },
     "test": {
-      "dependsOn": ["lint", "build", "^test"]
+      "dependsOn": ["lint", "build", "^test"],
+      "outputs": ["coverage/**"]
     },
     "pre-commit": {}
   }

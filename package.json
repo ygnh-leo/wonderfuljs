@@ -8,13 +8,13 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "prepare": "node ./scripts/prepare.js",
-    "format": "turbo run format",
-    "lint": "turbo run lint",
-    "build": "pnpm turbo build",
-    "start": "pnpm turbo start",
-    "dev": "pnpm turbo dev",
-    "test": "turbo run test",
-    "pre-commit": "pnpm turbo pre-commit"
+    "format": "turbo format",
+    "lint": "turbo lint",
+    "build": "turbo build",
+    "start": "turbo start",
+    "dev": "turbo dev",
+    "test": "turbo test",
+    "pre-commit": "turbo pre-commit"
   },
   "dependencies": {
     "turbo": "~1.6.3",

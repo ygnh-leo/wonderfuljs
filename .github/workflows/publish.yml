@@ -23,23 +23,29 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
 
       - name: 安装 pnpm
         run: npm i pnpm@latest -g
 
-      - name: 配置 pnpm 缓存
-        run: pnpm config set store-dir $PNPM_CACHE_FOLDER
+      - run: pnpm config set store-dir $PNPM_CACHE_FOLDER
+      - run: npm config set git-checks false
 
       - name: 配置 NPM_TOKEN
         run: npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: 配置 git-checks
-        run: npm config set git-checks false
+      - name: 安装依赖 >>> 构建 node_modules
+        run: pnpm install --frozen-lockfile
 
-      - name: 安装依赖
-        run: pnpm install
+      - name: turbo 缓存加速
+        uses: actions/cache@v3
+        with:
+          path: |
+            node_modules/.cache/turbo
+          key: ${{ runner.os }}-cache-turbo
 
       - name: 打包依赖
         run: pnpm build
