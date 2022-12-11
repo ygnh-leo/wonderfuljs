@@ -32,7 +32,7 @@ importers:
       eslint-plugin-react: ^7.31.10
       eslint-plugin-react-hooks: ^4.6.0
       lint-staged: ^13.0.3
-      prettier: 2.7.0
+      prettier: ^2.8.0
       typescript: ^4.8.4
     devDependencies:
       '@types/react': 18.0.26
@@ -46,11 +46,11 @@ importers:
       eslint-plugin-import: 2.26.0_g55mozrafhqqayuqbco5f6g2dq
       eslint-plugin-jest: 27.1.6_veqprcatkkepwtwdsjdiuwbpre
       eslint-plugin-node: 11.1.0_eslint@8.20.0
-      eslint-plugin-prettier: 4.2.1_3tlnmbjmodxtmhoajyjv44uujy
+      eslint-plugin-prettier: 4.2.1_2xxwk4wbl4ctecskzrkith4bam
       eslint-plugin-react: 7.31.11_eslint@8.20.0
       eslint-plugin-react-hooks: 4.6.0_eslint@8.20.0
       lint-staged: 13.1.0
-      prettier: 2.7.0
+      prettier: 2.8.1
       typescript: 4.9.4
 
   packages/tsconfig:
@@ -1210,7 +1210,7 @@ packages:
       semver: 6.3.0
     dev: true
 
-  /eslint-plugin-prettier/4.2.1_3tlnmbjmodxtmhoajyjv44uujy:
+  /eslint-plugin-prettier/4.2.1_2xxwk4wbl4ctecskzrkith4bam:
     resolution: {integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -1223,7 +1223,7 @@ packages:
     dependencies:
       eslint: 8.20.0
       eslint-config-prettier: 8.5.0_eslint@8.20.0
-      prettier: 2.7.0
+      prettier: 2.8.1
       prettier-linter-helpers: 1.0.0
     dev: true
 
@@ -2439,12 +2439,6 @@ packages:
     engines: {node: '>=6.0.0'}
     dependencies:
       fast-diff: 1.2.0
-    dev: true
-
-  /prettier/2.7.0:
-    resolution: {integrity: sha512-nwoX4GMFgxoPC6diHvSwmK/4yU8FFH3V8XWtLQrbj4IBsK2pkYhG4kf/ljF/haaZ/aii+wNJqISrCDPgxGWDVQ==}
-    engines: {node: '>=10.13.0'}
-    hasBin: true
     dev: true
 
   /prettier/2.8.1:
