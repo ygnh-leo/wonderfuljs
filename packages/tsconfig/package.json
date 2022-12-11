@@ -1,0 +1,21 @@
+{
+  "name": "@wonderfuljs/tsconfig",
+  "version": "0.0.0",
+  "files": [
+    "recommended.json",
+    "react.json"
+  ],
+  "scripts": {
+    "format": "prettier --write \"**/*.{json,md}\"",
+    "pre-commit": "lint-staged"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.0",
+    "lint-staged": "^13.0.3"
+  },
+  "lint-staged": {
+    "*.{js, json}": [
+      "prettier --write"
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+---
+"@wonderfuljs/tsconfig": patch
+---
+
+init

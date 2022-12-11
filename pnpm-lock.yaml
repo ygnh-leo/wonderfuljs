@@ -53,6 +53,14 @@ importers:
       prettier: 2.7.0
       typescript: 4.9.4
 
+  packages/tsconfig:
+    specifiers:
+      lint-staged: ^13.0.3
+      prettier: ^2.7.0
+    devDependencies:
+      lint-staged: 13.1.0
+      prettier: 2.8.1
+
 packages:
 
   /@babel/code-frame/7.18.6:
@@ -2443,7 +2451,6 @@ packages:
     resolution: {integrity: sha512-lqGoSJBQNJidqCHE80vqZJHWHRFoNYsSpP9AjFhlhi9ODCJA541svILes/+/1GM3VaL/abZi7cpFzOpdR9UPKg==}
     engines: {node: '>=10.13.0'}
     hasBin: true
-    dev: false
 
   /prop-types/15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
