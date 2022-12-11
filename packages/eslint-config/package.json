@@ -1,6 +1,6 @@
 {
   "name": "@wonderfuljs/eslint-config",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": false,
   "scripts": {
     "lint": "eslint --fix .",
